@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background: radial-gradient(circle at center, #0e0e0e, #0e0e2e);
+
+    #star{
+        display: block;
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        padding: 8vh;
+        border-radius: 100%;
+        background: #ff9900;
+        z-index: 0;
+    }
+
+    #planet{
+        display: block;
+        position: fixed;
+        height: 0px;
+        width: 0px;
+        padding: 10px;
+        border-radius: 100%;
+        background: #06a7ff;
+        z-index: 0;
+    }
+}
