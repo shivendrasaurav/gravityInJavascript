@@ -1,24 +1,3 @@
-function pull(){
-    var constant = 6.67*(10**-11);
-    var planet = document.getElementById("planet");
-    var star = document.getElementById("star");
-    var m1 = 5973600000000000000000000;
-    var m2 = m1*333000;
-    var distance = 149000000;
-    var force = constant*m1*m2/distance**2;
-    console.log(force);
-    var pull=0;
-
-/*
-    setInterval(function(){
-        pull=pull+gravity;
-        var trans = "translate("+pull**1.5+"px, "+pull**1.5+"px)"
-        ball.style.transform = trans;       
-        ball.style.transition = "200ms"; 
-    }, 100);
-*/
-}
-
 function orbit(){
     var planet = document.getElementById("planet");
     var star = document.getElementById("star");
@@ -47,4 +26,38 @@ function orbit(){
 
         console.log(i);
     }, 10);
+}
+
+function fly(){
+    var planet = document.getElementById("ball");
+    x = planet.x;
+    console.log(x);
+    var trans = "translateY(" + (x-100) + "px)";
+    planet.style.transform = trans;
+    planet.style.transition = "100ms";
+}
+function downwardsGravity(){
+    var planet = document.getElementById("ball");
+
+    var gAcc = 5;
+    var vel = 0;
+
+    setInterval(function(){
+        if(vel>=(document.getElementById("canvas").clientHeight-165)){
+            var a = document.getElementById("canvas").clientHeight;
+            console.log(a);
+            var trans = "translateY(" + (a-165) + "px)";
+            planet.style.transform = trans;
+            planet.style.transition = "100ms";
+            bounce(a, 100);
+            bounce(a, 60);
+            bounce(a, 20);
+        }
+        else{
+            vel = vel + gAcc;
+            var trans = "translateY(" + vel + "px)";
+            planet.style.transform = trans;
+            planet.style.transition = "100ms";
+        }
+    }, 10)
 }

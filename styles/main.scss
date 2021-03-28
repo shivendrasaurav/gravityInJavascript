@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 body{
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background: radial-gradient(circle at center, #0e0e0e, #0e0e2e);
 
     #star{
@@ -17,6 +17,10 @@ body{
         border-radius: 100%;
         background: #ff9900;
         z-index: 0;
+
+        &:hover{
+            transform: scale3d(2);
+        }
     }
 
     #planet{
@@ -26,7 +30,38 @@ body{
         width: 0px;
         padding: 10px;
         border-radius: 100%;
-        background: #06a7ff;
+        background: #56ff86;
         z-index: 0;
     }
+
+
+
+    #canvas{
+        height: 800px;
+        width: 90vw;
+        border: 2px solid #fcfcfc;
+        margin: 10px auto;
+    }
+    #ground{
+        position: relative;
+        top: 100%;
+        height: 50px;
+        transform: translateY(-50px);
+        width: 100%;
+        background: sandybrown;
+    }
+
+    #ball{
+        display: block;
+        position: relative;
+        height: 0px;
+        width: 0px;
+        top: 40px;
+        left: 60px;
+        padding: 12px;
+        border-radius: 100%;
+        background: #fcfcfc;
+        z-index: 0;
+    }
+
 }
