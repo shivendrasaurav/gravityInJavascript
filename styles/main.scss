@@ -64,4 +64,15 @@ body{
         z-index: 0;
     }
 
+
+    #object{
+        display: block;
+        position: fixed;
+        height: 0px;
+        width: 0px;
+        padding: 20px;
+        border-radius: 100%;
+        background: #1e1e4e;
+        z-index: 0;
+    }
 }

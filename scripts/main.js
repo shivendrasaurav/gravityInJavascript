@@ -61,3 +61,64 @@ function downwardsGravity(){
         }
     }, 10)
 }
+
+function sleep(milliseconds) {  
+    return new Promise(resolve => setTimeout(resolve, milliseconds));  
+}
+function toCenter(){
+    var obj = document.getElementById("object");
+    var x = (obj.offsetHeight/2);
+    var y = (obj.offsetWidth/2);
+
+    var cX = 1080/2;
+    var cY = 768/2;
+
+    var i=0.4;
+    var x1=0 , y1=0;
+    setInterval(function(){
+        if(x<=cX && y<=cY){
+            x1 = x1 + i;
+            y1 = y1 + i**1.2;
+    
+            var trans = "translate("+x1+"px, "+y1+"px)"
+            obj.style.transform = trans;
+            obj.style.transition = "10ms"; 
+        
+            console.log(x1, y1);
+            console.log("1st Quad");
+        }
+        else if(x<=cX && y>=cY){
+            x1 = x1 + i**1.2;
+            y1 = y1 - i;
+    
+            var trans = "translate("+x1+"px, "+y1+"px)"
+            obj.style.transform = trans;
+            obj.style.transition = "10ms"; 
+    
+            console.log(x1, y1);
+            console.log("2nd Quad");
+        }
+        else if(x>=cX && y<=cY){
+            x1 = x1 - i;
+            y1 = y1 + i**1.2;
+    
+            var trans = "translate("+x1+"px, "+y1+"px)"
+            obj.style.transform = trans;
+            obj.style.transition = "10ms"; 
+        
+            console.log(x1, y1);
+            console.log("4th Quad");
+        }
+        else if(x>=cX && y>=cY){
+            x1 = x1 - i**1.2;
+            y1 = y1 - i;
+    
+            var trans = "translate("+x1+"px, "+y1+"px)"
+            obj.style.transform = trans;
+            obj.style.transition = "10ms"; 
+    
+            console.log(x1, y1);
+            console.log("3rd Quad");
+        }
+    }, 1);
+}
