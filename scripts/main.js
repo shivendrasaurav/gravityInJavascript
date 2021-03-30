@@ -78,7 +78,7 @@ function toCenter(){
     var x1=x , y1=y;
     setInterval(function(){
         x1 = x1 + i;
-        y1 = y1 + i;
+        y1 = x1*x1;
 
         var trans = "translate("+x1+"px, "+y1+"px)"
         obj.style.transform = trans;
