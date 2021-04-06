@@ -1,0 +1,56 @@
+* {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+body .console {
+  display: block;
+  position: fixed;
+  bottom: 10px;
+  left: 50px;
+  border-radius: 10px;
+  padding: 15px 20px;
+  background: -webkit-gradient(linear, left top, right bottom, from(#0065af), to(#06a7dd));
+  background: linear-gradient(to bottom right, #0065af, #06a7dd);
+  -webkit-box-shadow: 4px 4px 8px #acacacaa;
+          box-shadow: 4px 4px 8px #acacacaa;
+}
+
+body .console .keys {
+  width: 50px;
+  height: 50px;
+  border: none;
+  margin-top: 5px;
+  background: #fafafa;
+  -webkit-box-shadow: 3px 3px 12px #1e1e1eaa, -3px -3px 12px #fcfcfcaa;
+          box-shadow: 3px 3px 12px #1e1e1eaa, -3px -3px 12px #fcfcfcaa;
+  outline: none;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+body .console .keys:hover {
+  background: #fafafadd;
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+body .console .shift {
+  width: 104px;
+}
+
+body .console .keys_hidden {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: transparent;
+  color: transparent;
+}
+/*# sourceMappingURL=controller.css.map */

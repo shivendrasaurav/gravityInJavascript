@@ -24,7 +24,6 @@ function orbit(){
 
         i+=0.01745329;
 
-        r=r-0.05;
         console.log(i);
     }, 10);
 }
