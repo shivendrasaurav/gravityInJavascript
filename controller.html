@@ -8,7 +8,7 @@
     <script src="./scripts/controller.js"></script>
     <title>Controller</title>
 </head>
-<body onkeydown="keypress(event);">
+<body onkeydown="keypress(event);" onload="getObjPos();">
     <div class="console">
         <button class="keys_hidden" id="hidden">W</button>
         <button class="keys" id="up" onclick="pressup();">W</button>
@@ -19,7 +19,7 @@
         <button class="keys" id="jump" onclick="pressjump();">X</button>
         <button class="keys" id="fire" onclick="pressfire();">C</button>
     </div>
-    <div class="playArea">
+    <div class="playArea" id="play">
         <div id="obj"></div>
     </div>
     

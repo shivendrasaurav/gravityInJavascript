@@ -53,4 +53,23 @@ body .console .keys_hidden {
   background: transparent;
   color: transparent;
 }
+
+body .playArea {
+  display: block;
+  width: 90vw;
+  height: 80vh;
+  margin: 10vh auto;
+  background: #ececec;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 12px #acacacaa;
+          box-shadow: 4px 4px 12px #acacacaa;
+}
+
+body .playArea #obj {
+  width: 30px;
+  height: 30px;
+  background: red;
+  border-radius: 90px;
+  position: relative;
+}
 /*# sourceMappingURL=controller.css.map */
