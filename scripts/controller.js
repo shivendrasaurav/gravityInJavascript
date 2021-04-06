@@ -1,39 +1,48 @@
 var objX = 0;
 var obJY = 0;
-
+var zL = 1;
 
 function getObjPos(){
     var bodyRect = document.body.getBoundingClientRect();
-    elemRect = document.getElementById("obj").getBoundingClientRect();
-    playRect = document.getElementById("play").getBoundingClientRect();
+    var elemRect = document.getElementById("obj").getBoundingClientRect();
+    var playRect = document.getElementById("play").getBoundingClientRect();
     
-    objY   = elemRect.top - bodyRect.top;
-    objX   = elemRect.left - bodyRect.left;
+    objY = elemRect.top - bodyRect.top;
+    objX = elemRect.left - bodyRect.left;
+
+    var transtar =  "translate("+objX+"px, "+objY+"px)";
+    document.getElementById("obj").style.transform = transtar;
 }
 
 function moveUp(){
     var a = document.getElementById("obj");
     objY = objY - 10;
     var transtar =  "translate("+objX+"px, "+objY+"px)";
-    a.style.transform = transtar;    
+    a.style.transform = transtar;
 }
 function moveDown(){
     var a = document.getElementById("obj");
     objY = objY + 10;
     var transtar =  "translate("+objX+"px, "+objY+"px)";
-    a.style.transform = transtar;    
+    a.style.transform = transtar;
 }
 function moveLeft(){
     var a = document.getElementById("obj");
     objX = objX - 10;
     var transtar =  "translate("+objX+"px, "+objY+"px)";
-    a.style.transform = transtar;    
+    a.style.transform = transtar;
 }
 function moveRight(){
     var a = document.getElementById("obj");
     objX = objX + 10;
     var transtar =  "translate("+objX+"px, "+objY+"px)";
-    a.style.transform = transtar;    
+    a.style.transform = transtar;
+}
+function moveShift(){
+    var a = document.getElementById("obj");
+    zL = zl + 0.1;
+    var transtar =  "scale("+zL+")";
+    a.style.transform = transtar;
 }
 
 function pressup(){
@@ -41,7 +50,8 @@ function pressup(){
     a.style.background="#1e1e1e";
     a.style.color="#fcfcfc";
 
-    moveUp();
+    if(objY>10)
+        moveUp();
 
     setTimeout(function(){
         var a = document.getElementById('up');
@@ -54,23 +64,11 @@ function pressdown(){
     a.style.background="#1e1e1e";
     a.style.color="#fcfcfc";
 
-    moveDown();
+    if(objY<570)
+        moveDown();
 
     setTimeout(function(){
         var a = document.getElementById('down');
-        a.style.background="#fcfcfc";
-        a.style.color="#1e1e1e";    
-    }, 100);
-}
-function pressshift(){
-    var a = document.getElementById('shift');
-    a.style.background="#1e1e1e";
-    a.style.color="#fcfcfc";
-
-    moveLeft();
-
-    setTimeout(function(){
-        var a = document.getElementById('shift');
         a.style.background="#fcfcfc";
         a.style.color="#1e1e1e";    
     }, 100);
@@ -80,7 +78,8 @@ function pressleft(){
     a.style.background="#1e1e1e";
     a.style.color="#fcfcfc";
 
-    moveLeft();
+    if(objX>10)
+        moveLeft();
 
     setTimeout(function(){
         var a = document.getElementById('left');
@@ -93,10 +92,28 @@ function pressright(){
     a.style.background="#1e1e1e";
     a.style.color="#fcfcfc";
 
-    moveRight();
+    if(objX<870)
+        moveRight();
 
     setTimeout(function(){
         var a = document.getElementById('right');
+        a.style.background="#fcfcfc";
+        a.style.color="#1e1e1e";    
+    }, 100);
+}
+function pressshift(){
+    var a = document.getElementById('shift');
+    a.style.background="#1e1e1e";
+    a.style.color="#fcfcfc";
+
+    moveShift();
+
+    zL = 1;
+    var transtar =  "scale("+zL+")";
+    a.style.transform = transtar;
+
+    setTimeout(function(){
+        var a = document.getElementById('shift');
         a.style.background="#fcfcfc";
         a.style.color="#1e1e1e";    
     }, 100);

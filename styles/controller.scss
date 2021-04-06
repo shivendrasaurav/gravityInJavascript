@@ -17,6 +17,7 @@ body{
         padding: 15px 20px;
         background: linear-gradient(to bottom right, #0065af, #06a7dd);
         box-shadow: 4px 4px 8px #acacacaa;
+        z-index: 10;
 
         .keys{
             width: 50px;
@@ -48,8 +49,8 @@ body{
 
     .playArea{
         display: block;
-        width: 90vw;
-        height: 80vh;
+        width: 900px;
+        height: 600px;
         margin: 10vh auto;
         background: #ececec;
         border-radius: 10px;
