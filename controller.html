@@ -8,16 +8,16 @@
     <script src="./scripts/controller.js"></script>
     <title>Controller</title>
 </head>
-<body>
+<body onkeydown="keypress(event);">
     <div class="console">
         <button class="keys_hidden" id="hidden">W</button>
-        <button class="keys" id="up">W</button>
-        <button class="keys shift" id="shift">Shift</button><br/>
-        <button class="keys" id="left">A</button>
-        <button class="keys" id="down">S</button>
-        <button class="keys" id="right">D</button>
-        <button class="keys" id="jump">X</button>
-        <button class="keys" id="fire">C</button>
+        <button class="keys" id="up" onclick="pressup();">W</button>
+        <button class="keys shift" id="shift" onclick="pressshift();">Shift</button><br/>
+        <button class="keys" id="left" onclick="pressleft();">A</button>
+        <button class="keys" id="down" onclick="pressdown();">S</button>
+        <button class="keys" id="right" onclick="pressright();">D</button>
+        <button class="keys" id="jump" onclick="pressjump();">X</button>
+        <button class="keys" id="fire" onclick="pressfire();">C</button>
     </div>
     <div class="playArea">
         <div id="obj"></div>
