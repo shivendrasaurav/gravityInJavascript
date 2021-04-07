@@ -6,8 +6,9 @@
 }
 
 body {
-  height: 100vh;
+  max-height: 100vh;
   width: 100%;
+  padding-top: 10vh;
 }
 
 body .console {
@@ -59,7 +60,7 @@ body .playArea {
   display: block;
   width: 900px;
   height: 600px;
-  margin: 10vh auto;
+  margin: 0px auto;
   background: #ececec;
   border-radius: 10px;
   -webkit-box-shadow: 4px 4px 12px #acacacaa;

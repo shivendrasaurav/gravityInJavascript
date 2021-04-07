@@ -5,8 +5,9 @@
 }
 
 body{
-    height: 100vh;
+    max-height: 100vh;
     width: 100%;
+    padding-top: 10vh;
 
     .console{
         display: block;
@@ -51,7 +52,7 @@ body{
         display: block;
         width: 900px;
         height: 600px;
-        margin: 10vh auto;
+        margin: 0px auto;
         background: #ececec;
         border-radius: 10px;
         box-shadow: 4px 4px 12px #acacacaa;
