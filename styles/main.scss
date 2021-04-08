@@ -66,13 +66,10 @@ body{
 
 
     #object{
-        display: block;
-        position: fixed;
-        height: 0px;
-        width: 0px;
-        padding: 20px;
-        border-radius: 100%;
+        position: relative;
+        height: 30px;
+        width: 30px;
+        border-radius: 90px;
         background: #1e1e4e;
-        z-index: 0;
     }
 }

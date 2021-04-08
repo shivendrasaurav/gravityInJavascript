@@ -1,3 +1,12 @@
+//Global Variables
+var objX = 0;
+var obJY = 0;
+var G = 0.000000000066743;
+var meu = 0.8;
+var g = 9.81;
+var vel = 1;
+
+
 function orbit(){
     var planet = document.getElementById("planet");
     var star = document.getElementById("star");
@@ -37,29 +46,23 @@ function fly(){
     planet.style.transition = "100ms";
 }
 function downwardsGravity(){
-    var planet = document.getElementById("ball");
-
-    var gAcc = 5;
-    var vel = 0;
-
-    setInterval(function(){
-        if(vel>=(document.getElementById("canvas").clientHeight-165)){
-            var a = document.getElementById("canvas").clientHeight;
-            console.log(a);
-            var trans = "translateY(" + (a-165) + "px)";
-            planet.style.transform = trans;
-            planet.style.transition = "100ms";
-            bounce(a, 100);
-            bounce(a, 60);
-            bounce(a, 20);
-        }
-        else{
-            vel = vel + gAcc;
-            var trans = "translateY(" + vel + "px)";
-            planet.style.transform = trans;
-            planet.style.transition = "100ms";
-        }
-    }, 10)
+    var a = document.getElementById("ball");
+    vel++;
+    time = Math.sqrt((2*800)/g);
+    console.log(time);
+    if(objY<620){
+        objY = objY + vel*g;
+        var transtar =  "translate("+objX+"px, "+objY+"px)";
+        a.style.transform = transtar;
+        a.style.transition = time*100+"ms";
+        downwardsGravity();
+    }
+    else{
+        objY = objY - vel*meu*g;
+        var transtar =  "translate("+objX+"px, "+objY+"px)";
+        a.style.transform = transtar;
+        a.style.transition = time*100+"ms";
+    }    
 }
 
 function sleep(milliseconds) {  
@@ -86,4 +89,18 @@ function toCenter(){
         console.log(x1, y1);
         console.log("1st Quad");
    }, 10);
+}
+
+function getObjPos(){
+    var bodyRect = document.body.getBoundingClientRect();
+    var elemRect = document.getElementById("ball").getBoundingClientRect();
+    var playRect = document.getElementById("canvas").getBoundingClientRect();
+    
+    objY = elemRect.top - bodyRect.top;
+    objX = elemRect.left - bodyRect.left;
+
+    var transtar =  "translate("+objX+"px, "+objY+"px)";
+    document.getElementById("ball").style.transform = transtar;
+
+    console.log(objX, objY);
 }

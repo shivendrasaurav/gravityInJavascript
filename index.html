@@ -8,8 +8,8 @@
     <script src="./scripts/main.js"></script>
     <title>Ball on the ground</title>
 </head>
-<body onload="downwardsGravity();">
-    <div id="canvas" onkeyup="fly();">
+<body onload="getObjPos(); downwardsGravity();">
+    <div id="canvas" onkeypress="fly();">
         <div id="ground"></div>
         <div id="ball"></div>    
     </div>
